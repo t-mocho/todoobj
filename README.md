@@ -2,7 +2,7 @@
 
 ## task追加  
 
-### 2/19 チョトハマタヨ
+### 2/19 チョト・・トテモハマタヨ
 
 ```
 function addtodo(todos) {
@@ -28,6 +28,32 @@ function addtodo(todos) {
 `appendChild(document.createTextNode(str));` って書き方にしたらいけた  
 
 無事書き出しまでしゅうーりょーー
+
+`addEventListener`こいつに死にかけたマージー！！  
+idじゃなくて<i>を指定したクリックイベントができなかった  
+
+```
+const tasklist = document.getElementById('tasklist');
+tasklist.addEventListener('click', (e) => {
+  let target = e.target;
+  // iのみ処理を行う
+  const icon = document.getElementsByClassName('material-icons');
+  for (var i = 0; i < icon.length; i++) {
+    if (target === icon[i]) {
+      target.classList.toggle('end');
+      // done変更
+      todos[i].done = !todos[i].done;
+    }
+  }
+});
+```
+
+ので、tasklist(ul)を指定でe.targetでdomはとりつつ  
+`material-icons`のclassを持った<i>を指定して処理を行った  
+ドハマリ！  
+  
+`todos[i].done = !todos[i].done;` を使ったら  
+doneに対してfalse or true設定できたtodo完了まで
 
 ### 2/18 すぐ沼に浸かる
 
