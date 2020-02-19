@@ -46,4 +46,24 @@ var todos = [{
 todos.shift();
 ```
 
-ので、削除したよ
+ので、削除したよ  
+
+```
+  const text = document.getElementById('addtext').value;
+  const todo = {};
+  if (text) {
+    // 値更新
+    todo.task = text;
+    todo.done = false;
+    // 配列追加
+    todos.push(todo);
+    // 書き出し'
+    addtodo(todos);
+    // 入力値リセット
+    let re = document.getElementById('addtext');
+    re.value = "";
+  }
+```
+
+`[{}]` この配列＋objの場合{}を作って中身作成したほうがあとあと処理楽（らしい）  
+配列追加、最後の`push`をしてなくてひたすら上書きするという地獄をみた
