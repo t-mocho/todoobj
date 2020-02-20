@@ -4,6 +4,25 @@
 
 
 ### 2/20 ハマタパート２
+
+さあローカル保存ザマス！ということで  
+`var deta = localStorage.setItem('todos', JSON.stringify(todos));`  
+このコードでOKでした！なお最初は   
+`var deta = localStorage.setItem('todos', todos);`  
+配列をそのままsetItemしようとしたらドエラー発生してました  
+しらべたら「JSON形式のデータを文字列に変換する必要アリ」とのことで  
+JSON.stringify()でいったんJSON形式の文字列に変換  
+
+```
+  // 取り出し
+  var loadtodo = localStorage.getItem('todos');
+  // 文字列に変換
+  tododeta = JSON.parse(loadtodo);
+  console.log(tododeta);
+```
+取り出すときはgetItemで保存時のkeyを指定してあげて  
+JSON.parseで文字列に変換したらできたよ！（とりあえずこんそーるろぐ）
+
 ```
 var todos = [{
   num: 0,
