@@ -106,12 +106,15 @@ allclear.onclick = function() {
 (function() {
   // 取り出し
   var loadtodo = localStorage.getItem('todos');
-  // 文字列に変換
-  tododeta = JSON.parse(loadtodo);
-  // HTMLに書き出し
-  for (var i = 0; i < tododeta.length; i++) {
-    todos.push(tododeta[i]);
-    addtodo(todos);
+  if (loadtodo) {
+    // 文字列に変換
+    tododeta = JSON.parse(loadtodo);
+    // HTMLに書き出し
+    for (var i = 0; i < tododeta.length; i++) {
+      todos.push(tododeta[i]);
+      addtodo(todos);
+    }
+    console.log(todos);
   }
   console.log(todos);
 })();

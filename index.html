@@ -3,26 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=460,initial-scale=1">
+  <title>TODOLIST</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Todolist2保存版</title>
 </head>
 
 <body>
   <header>
-    <h1>todolist</h1>
+    <h1>Todo List</h1>
   </header>
-  <main>
-    <h2>task</h2>
-    <input type="text" id="addtext">
-    <button id="addbtn">add</button>
-    <hr>
+  <main class="main">
+    <div class="textin-area">
+      <input type="text" id="addtext">
+      <button id="addbtn">add</button>
+    </div>
+
+    <h2>My Task</h2>
+
     <div id="task">
       <ul id="tasklist">
       </ul>
     </div>
-    <button id="savebtn">save</button>
-    <button id="clearbtn">allclear</button>
+
+    <div class="btn-area">
+      <button id="savebtn">save</button>
+      <button id="clearbtn">allclear</button>
+    </div>
   </main>
   <script src="app.js"></script>
 </body>
