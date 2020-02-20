@@ -2,6 +2,63 @@
 
 ## task追加  
 
+
+### 2/20 ハマタパート２
+```
+var todos = [{
+  num: 0,
+  task: addtext,
+  done: false
+}];
+// 削除
+tasklist.addEventListener('click', (e) => {
+  let target = e.target;
+  // delclass
+  const delicon = document.getElementsByClassName('material-icons del');
+  // todosの長さからiの位置を指定
+  for (var i = 0; i < todos.length; i++) {
+    if (target === delicon[i]) {
+      // 配列削除
+      todos.splice(todos[i].num, 1);
+      // num更新
+      todos[i].num = i;
+      //HTML削除
+      target.parentElement.remove();
+    }
+  }
+});
+```
+
+削除したかったんだよ（叫）  
+配列の番号どうやってとるんだと模索しながら  
+todosにnumを追加して番号をふってみた  
+そしたらばぐった。挙動へん。spliceの使い方がチョトチガタ
+spliceの引数は「ばんごう」だよ！ばんごう！  
+最初は`todos[i]`とかでやってたけど配列だよそれは  
+ってことで大幅に変更して以下に
+
+```
+tasklist.addEventListener('click', (a) => {
+  target = a.target;
+  for (var i = 0; i < todos.length; i++) {
+    const delicon = document.getElementsByClassName('material-icons del');
+    // deliconがクリックされたら処理
+    if (target === delicon[i]) {
+      // 番号取得
+      var id = todos.indexOf(todos[i]);
+      // 配列削除
+      todos.splice(id, 1);
+      // HTML削除
+      target.parentElement.remove();
+    }
+  }
+});
+```
+
+`indexOf`をつかってみた  
+要素が何番目か教えてくれてspliceしました！ながかったーー！  
+削除してももんだいなしだと、おもう
+
 ### 2/19 チョト・・トテモハマタヨ
 
 ```
