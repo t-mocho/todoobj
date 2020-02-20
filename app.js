@@ -36,9 +36,16 @@ function addtodo(todos) {
   // todosの配列を1つずつとる
   for (let i in todos) {
     var addlist = todos[i].task;
+    var adddone = todos[i].done;
+  }
+  // true判定
+  if (adddone === true) {
+    newli.insertAdjacentHTML('afterbegin', '<i class="material-icons add end">favorite</i>');
+    // false
+  } else {
+    newli.insertAdjacentHTML('afterbegin', '<i class="material-icons add">favorite</i>');
   }
   // HTMLに書き出し
-  newli.insertAdjacentHTML('afterbegin', '<i class="material-icons add">favorite</i>');
   newli.appendChild(document.createTextNode(addlist));
   newli.insertAdjacentHTML('beforeend', '<i class="material-icons del">delete</i>');
   tasklist.appendChild(newli);
@@ -46,7 +53,6 @@ function addtodo(todos) {
 
 // 完了
 tasklist.addEventListener('click', (e) => {
-  console.log(todos);
   //console.log(todos);
   let target = e.target;
   // addclass
@@ -63,23 +69,6 @@ tasklist.addEventListener('click', (e) => {
   }
 });
 
-/*
-tasklist.addEventListener('click', (e) => {
-  let target = e.target;
-
-  const delicon = document.getElementsByClassName('material-icons del');
-
-  for (var i = 0; i < todos.length; i++) {
-    if (target === delicon[i]) {
-
-      target.parentElement.remove();
-      todos.splice(todos[e], 1);
-      console.log(e)
-    }
-  }
-});
-*/
-
 tasklist.addEventListener('click', (a) => {
   target = a.target;
   for (var i = 0; i < todos.length; i++) {
@@ -95,3 +84,34 @@ tasklist.addEventListener('click', (a) => {
     }
   }
 });
+
+// ローカルに保存ッ
+const savebtn = document.getElementById('savebtn');
+savebtn.onclick = function() {
+  //JSON.stringifyした上で、localStorageに保存します。
+  var deta = localStorage.setItem('todos', JSON.stringify(todos));
+};
+
+// オールクリア
+const allclear = document.getElementById('clearbtn');
+allclear.onclick = function() {
+  // 配列削除
+  todolist.appendChild.remove();
+  // ローカル保存すべて削除
+  localStorage.clear();
+};
+
+
+// ローカルから取り出し
+(function() {
+  // 取り出し
+  var loadtodo = localStorage.getItem('todos');
+  // 文字列に変換
+  tododeta = JSON.parse(loadtodo);
+  // HTMLに書き出し
+  for (var i = 0; i < tododeta.length; i++) {
+    todos.push(tododeta[i]);
+    addtodo(todos);
+  }
+  console.log(todos);
+})();
