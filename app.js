@@ -76,6 +76,8 @@ tasklist.addEventListener('click', (e) => {
     if (target === delicon[i]) {
       // 配列削除
       todos.splice(todos[i].num, 1);
+      // num更新
+      todos[i].num = i;
       //HTML削除
       target.parentElement.remove();
     }
