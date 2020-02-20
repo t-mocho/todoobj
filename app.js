@@ -50,6 +50,7 @@ function addtodo(todos) {
 
 // 完了
 tasklist.addEventListener('click', (e) => {
+  console.log(todos);
   let target = e.target;
   // addclass
   const icon = document.getElementsByClassName('material-icons add');
@@ -72,11 +73,11 @@ tasklist.addEventListener('click', (e) => {
   const delicon = document.getElementsByClassName('material-icons del');
   // todosの長さからiの位置を指定
   for (var i = 0; i < todos.length; i++) {
-    // HTML削除
     if (target === delicon[i]) {
+      // 配列削除
       todos.splice(todos[i].num, 1);
+      //HTML削除
       target.parentElement.remove();
-      console.log(todos);
     }
   }
 });
