@@ -2,6 +2,30 @@
 
 ## task追加  
 
+### 2/21 タスクオールクリアとかストレージ保存とか！
+
+しんっぷるな処理にはまったーーー！！  
+
+```
+// オール削除
+const allclear = document.getElementById('clearbtn');
+allclear.onclick = function() {
+  if (todos !== 0) {
+    // 配列書き換え
+    todos = [];
+    //HTML書き換え
+    tasklist.innerHTML = "";
+    // ローカル保存すべて削除
+    localStorage.clear();
+  }
+};
+```
+
+最初はforを使ったchild[i].remove()とかでHTML消していたのですが  
+配列0の状態のボタン押下でコンソールにエラーがどばー！  
+ifで配列が0ならスルーってやってもなぜかひっかけてきちゃったので削除をやめて書き換えに変更 
+エラーがきえました！  
+saveボタンも削除して自動保存に変更  
 
 ### 2/20 ハマタパート２
 
