@@ -49,6 +49,8 @@ function addtodo(todos) {
   newli.appendChild(document.createTextNode(addlist));
   newli.insertAdjacentHTML('beforeend', '<i class="material-icons del">delete</i>');
   tasklist.appendChild(newli);
+  // ローカル保存
+  save();
 };
 
 // 完了
@@ -67,8 +69,11 @@ tasklist.addEventListener('click', (e) => {
       }
     }
   }
+  // ローカル保存
+  save();
 });
 
+// 一列削除
 tasklist.addEventListener('click', (a) => {
   target = a.target;
   for (var i = 0; i < todos.length; i++) {
@@ -82,23 +87,27 @@ tasklist.addEventListener('click', (a) => {
       // HTML削除
       target.parentElement.remove();
     }
+    // ローカル保存
+    save();
   }
 });
 
-// ローカルに保存ッ
-const savebtn = document.getElementById('savebtn');
-savebtn.onclick = function() {
-  //JSON.stringifyした上で、localStorageに保存します。
-  var deta = localStorage.setItem('todos', JSON.stringify(todos));
-};
-
-// オールクリア
+// オール削除
 const allclear = document.getElementById('clearbtn');
 allclear.onclick = function() {
-  // 配列削除
-  todolist.appendChild.remove();
+  // HTML
+  var task = document.getElementById('task');
+  task.removeChild(tasklist);
+  console.log(tasklist);
+
   // ローカル保存すべて削除
   localStorage.clear();
+};
+
+// ローカルに保存
+function save() {
+  // JSON文字列に変換して保存
+  var deta = localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 
@@ -114,7 +123,11 @@ allclear.onclick = function() {
       todos.push(tododeta[i]);
       addtodo(todos);
     }
-    console.log(todos);
   }
   console.log(todos);
 })();
+
+// 削除動き
+function animedel(){
+
+}

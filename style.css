@@ -71,7 +71,7 @@ h2 {
   margin: auto;
   padding: 10px;
   width: 80%;
-  border-bottom: dotted #333 1px;
+  border-bottom: dotted #ccc 1px;
   display: flex;
   align-items: center;
 }
@@ -86,30 +86,30 @@ h2 {
   margin-top: 30px;
 }
 
-#savebtn {
-  width: 70px;
-  height: 70px;
+#clearbtn {
+  width: 50px;
+  height: 50px;
   background: #fff;
   border: none;
   border-radius: 50%;
   margin: 10px;
   color: #333;
+  cursor: pointer;
+  transition: .3s;
 }
 
-#clearbtn {
-  width: 70px;
-  height: 70px;
-  background: #fff;
-  border: none;
-  border-radius: 50%;
-  margin: 10px;
-  color: #333;
+#clearbtn:hover {
+  background: #ffdab9;
+  color: #fff;
+  border: solid 2px #fff;
 }
 
 .material-icons.add {
   color: pink;
   font-size: 2em;
   margin-right: 30px;
+  transition: .2s;
+  cursor: pointer;
 }
 
 .material-icons.add.end {
