@@ -14,8 +14,17 @@ h2 {
   margin: 0;
 }
 
+.material-icons.add {
+  margin-right: 15px;
+}
+
 .main {
   width: 80%;
+}
+
+#tasklist li {
+  width: 80%;
+  font-size: .8em;
 }
 
 #addbtn:hover {
@@ -23,7 +32,6 @@ h2 {
   color: #555;
   border: none;
 }
-
 
 #clearbtn:hover {
   background: #fff;
