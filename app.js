@@ -105,11 +105,21 @@ allclear.onclick = function() {
   if (todos !== 0) {
     // 配列書き換え
     todos = [];
-    //HTML書き換え
-    tasklist.innerHTML = "";
-    // ローカル保存すべて削除
-    localStorage.clear();
+    // アニメーション
+    tasklist.classList.toggle('slideout');
+    /*
+    tasklist.style.transform = "translateX(150px)";
+    tasklist.style.opacity = "0";
+    tasklist.style.transition = ".9s";
+    */
+    setTimeout(function() {
+      //HTML書き換え
+      tasklist.innerHTML = "";
+      tasklist.classList.toggle('slideout');
+    }, 900);
   }
+  // ローカル保存すべて削除
+  localStorage.clear();
 };
 
 

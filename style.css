@@ -72,7 +72,7 @@ h2 {
 #addbtn:hover {
   background: #ffdab9;
   color: #fff;
-  border: solid 2px #fff;
+  border: solid 1px #fff;
 }
 
 #task {
@@ -121,14 +121,14 @@ h2 {
 #clearbtn:hover {
   background: #ffdab9;
   color: #fff;
-  border: solid 2px #fff;
+  border: solid 1px #fff;
 }
 
 .material-icons.add {
   color: pink;
   font-size: 2em;
   margin-right: 30px;
-  transition: .2s;
+  transition: .5s;
   cursor: pointer;
 }
 
@@ -147,6 +147,7 @@ h2 {
   color: #ddd;
 }
 
+/*アニメーション*/
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -173,17 +174,16 @@ h2 {
   animation-name: slideOut;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  color: pink;
 }
 
 @keyframes slideOut {
   from {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0px);
   }
 
   to {
     opacity: 0;
-    transform: translateX(0);
+    transform: translateY(150px);
   }
 }
