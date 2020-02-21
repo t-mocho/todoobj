@@ -1,9 +1,11 @@
 h1 {
   font-size: 3em;
+  letter-spacing: 3px;
 }
 
 h2 {
   font-size: 2em;
+  letter-spacing: 3px;
 }
 
 #addtext {
