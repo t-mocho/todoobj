@@ -95,21 +95,22 @@ tasklist.addEventListener('click', (a) => {
 // オール削除
 const allclear = document.getElementById('clearbtn');
 allclear.onclick = function() {
-  // HTML
-  var task = document.getElementById('task');
-  task.removeChild(tasklist);
-  console.log(tasklist);
-
-  // ローカル保存すべて削除
-  localStorage.clear();
+  if (todos !== 0) {
+    // 配列書き換え
+    todos = [];
+    //HTML書き換え
+    tasklist.innerHTML = "";
+    // ローカル保存すべて削除
+    localStorage.clear();
+  }
 };
+
 
 // ローカルに保存
 function save() {
   // JSON文字列に変換して保存
   var deta = localStorage.setItem('todos', JSON.stringify(todos));
 };
-
 
 // ローカルから取り出し
 (function() {
@@ -128,6 +129,6 @@ function save() {
 })();
 
 // 削除動き
-function animedel(){
+function animedel() {
 
 }
