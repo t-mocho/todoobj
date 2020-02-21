@@ -55,7 +55,6 @@ function addtodo(todos) {
 
 // 完了
 tasklist.addEventListener('click', (e) => {
-  //console.log(todos);
   let target = e.target;
   // addclass
   const icon = document.getElementsByClassName('material-icons add');
@@ -141,5 +140,4 @@ function save() {
       addtodo(todos);
     }
   }
-  console.log(todos);
 })();

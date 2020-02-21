@@ -1,0 +1,36 @@
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+#addtext {
+  margin: 20px;
+}
+
+#addbtn {
+  margin: 0;
+}
+
+.main {
+  width: 80%;
+}
+
+#addbtn:hover {
+  background: #fff;
+  color: #555;
+  border: none;
+}
+
+
+#clearbtn:hover {
+  background: #fff;
+  color: #555;
+  border: none;
+}
+
+.material-icons.del:hover {
+  color: gray;
+}
