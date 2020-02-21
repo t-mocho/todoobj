@@ -106,17 +106,16 @@ allclear.onclick = function() {
     // 配列書き換え
     todos = [];
     // アニメーション
-    tasklist.classList.toggle('slideout');
-    /*
-    tasklist.style.transform = "translateX(150px)";
+    tasklist.style.transform = "translateY(150px)";
     tasklist.style.opacity = "0";
     tasklist.style.transition = ".9s";
-    */
     setTimeout(function() {
       //HTML書き換え
+      tasklist.style.transform = "";
+      tasklist.style.opacity = "";
+      tasklist.style.transition = "";
       tasklist.innerHTML = "";
-      tasklist.classList.toggle('slideout');
-    }, 900);
+    }, 800);
   }
   // ローカル保存すべて削除
   localStorage.clear();

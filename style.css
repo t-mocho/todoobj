@@ -179,6 +179,24 @@ h2 {
 @keyframes slideOut {
   from {
     opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+}
+
+.allout {
+  animation-name: allOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes allOut {
+  from {
+    opacity: 1;
     transform: translateY(0px);
   }
 
