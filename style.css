@@ -54,7 +54,13 @@ h2 {
   height: 30px;
   border-radius: 15px;
   border: none;
-  padding: 3px;
+  padding: 4px;
+  padding-left: 10px;
+  outline: none;
+}
+
+#addtext::placeholder {
+  color: #bbb;
 }
 
 #addbtn {
@@ -67,10 +73,12 @@ h2 {
   color: #555;
   font-family: 'Ruda', sans-serif;
   transition: .3s;
+  cursor: pointer;
+  outline: none;
 }
 
 #addbtn:hover {
-  background: #ffdab9;
+  background: none;
   color: #fff;
   border: solid 1px #fff;
 }
@@ -116,10 +124,11 @@ h2 {
   transition: .3s;
   font-family: 'Ruda', sans-serif;
   font-size: 1.2em;
+  outline: none;
 }
 
 #clearbtn:hover {
-  background: #ffdab9;
+  background: none;
   color: #fff;
   border: solid 1px #fff;
 }
@@ -130,6 +139,7 @@ h2 {
   margin-right: 30px;
   transition: .5s;
   cursor: pointer;
+  outline: none;
 }
 
 .material-icons.add.end {
@@ -141,6 +151,7 @@ h2 {
   margin-left: auto;
   cursor: pointer;
   transition: .2s;
+  outline: none;
 }
 
 .material-icons.del:hover {
