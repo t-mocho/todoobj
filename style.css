@@ -8,6 +8,9 @@ body {
   background: linear-gradient(-135deg, #ED4264, #FFEDBC);
   background-attachment: fixed;
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
 }
 
 html {
@@ -19,18 +22,22 @@ html {
 }
 
 h1 {
+  font-family: 'Caveat', sans-serif;
   color: #fff;
-  font-size: 3em;
+  font-size: 5em;
   text-align: center;
   padding: 30px 0;
+  letter-spacing: 10px;
 }
 
 h2 {
+  font-family: 'Caveat', sans-serif;
   color: #fff;
-  font-size: 2.4em;
+  font-size: 3em;
   padding-top: 30px;
   border-bottom: 3px dotted #fff;
   margin: 30px 0;
+  letter-spacing: 10px;
 }
 
 .main {
@@ -57,12 +64,20 @@ h2 {
   border: none;
   height: 30px;
   width: 70px;
-  color: #333;
+  color: #555;
+  font-family: 'Ruda', sans-serif;
+  transition: .3s;
+}
+
+#addbtn:hover {
+  background: #ffdab9;
+  color: #fff;
+  border: solid 2px #fff;
 }
 
 #task {
   border-radius: 10px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   background: #fff;
 }
 
@@ -74,6 +89,9 @@ h2 {
   border-bottom: dotted #ccc 1px;
   display: flex;
   align-items: center;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 #tasklist li:last-child {
@@ -87,15 +105,17 @@ h2 {
 }
 
 #clearbtn {
-  width: 50px;
+  width: 170px;
   height: 50px;
   background: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 10px;
   margin: 10px;
   color: #333;
   cursor: pointer;
   transition: .3s;
+  font-family: 'Ruda', sans-serif;
+  font-size: 1.2em;
 }
 
 #clearbtn:hover {
@@ -119,4 +139,51 @@ h2 {
 .material-icons.del {
   color: gray;
   margin-left: auto;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.material-icons.del:hover {
+  color: #ddd;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.slideout {
+  animation-name: slideOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  color: pink;
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(0);
+  }
 }

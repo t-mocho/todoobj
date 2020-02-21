@@ -76,16 +76,23 @@ tasklist.addEventListener('click', (e) => {
 // 一列削除
 tasklist.addEventListener('click', (a) => {
   target = a.target;
+  const delli = target.parentNode;
   for (var i = 0; i < todos.length; i++) {
-    const delicon = document.getElementsByClassName('material-icons del');
-    // deliconがクリックされたら処理
+    const delicon = document.getElementsByClassName('material-icons del'); // deliconがクリックされたら処理
     if (target === delicon[i]) {
+      // アニメーション
+      const delli = target.parentNode;
+      delli.style.transform = "translateX(150px)";
+      delli.style.opacity = "0";
+      delli.style.transition = ".9s";
+      setTimeout(function() {
+        // HTML削除
+        target.parentElement.remove();
+      }, 800);
       // 番号取得
       var id = todos.indexOf(todos[i]);
       // 配列削除
       todos.splice(id, 1);
-      // HTML削除
-      target.parentElement.remove();
     }
     // ローカル保存
     save();
@@ -127,8 +134,3 @@ function save() {
   }
   console.log(todos);
 })();
-
-// 削除動き
-function animedel() {
-
-}
